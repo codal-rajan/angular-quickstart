@@ -1,0 +1,37 @@
+<h1>{{name}}</h1> test
+  <p> {{email}} </p>
+  <p> {{address.street}}, {{address.city}}, {{address.state}}
+  <br> <button (click)='toggleHobbies()'> Click me </button>
+  
+  <p> <strong> Hobbies </strong>
+  
+  <ul>
+  	<li *ngFor="let hobby of hobbies; let i = index;">
+  		{{hobby}} <button (click)="deletHobby(i)"> X </button>
+  	</li>
+  </ul>
+  <form (submit)="addHobby(hobby.value)">
+
+
+  	<label> Add hobby </label>
+	<input type='text' #hobby>
+  </form>
+  <hr/>
+  <h3>Edit Profile</h3>
+  
+  <form>
+	  <label> Name </label>
+	  <input type='text' name="name" [(ngModel)]="name">
+
+  </form>
+  
+  <hr/> 
+
+  <div *ngFor="let post of posts;">
+	  <strong>ID : </strong> {{post.id}} <br>
+	  <strong>Title : </strong> {{post.title}} <br>
+	  <strong>Body : </strong> {{post.body}} 
+	  <hr/>
+  </div>
+  
+  
